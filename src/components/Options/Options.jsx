@@ -1,16 +1,16 @@
 import CreateButton from "./CreateButton/CreateButton";
 import css from '../Options/CreateButton/CreateButton.module.css';
 
-export default function Options({updateFeedback, totalFeedback, resetFeedback}) {
+export default function Options({handleUpdateFeedback, totalFeedback, handleResetFeedback}) {
 
 
 
   return (
     <div>
-      <CreateButton text = 'Good' updateFeedback={updateFeedback}/>
-      <CreateButton text = 'Neutral' updateFeedback={updateFeedback}/>
-      <CreateButton text = 'Bad' updateFeedback={updateFeedback}/>
-      {totalFeedback !== 0 ? <button className={css.button} onClick={resetFeedback}>Reset</button>: <></>} 
+      <CreateButton text = 'Good' handleUpdateFeedback={handleUpdateFeedback}/>
+      <CreateButton text = 'Neutral' handleUpdateFeedback={handleUpdateFeedback}/>
+      <CreateButton text = 'Bad' handleUpdateFeedback={handleUpdateFeedback}/>
+      {totalFeedback !== 0 ? <button className={css.button} onClick={handleResetFeedback}>Reset</button>: <></>} 
     </div>
   )
 }

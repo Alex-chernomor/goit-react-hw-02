@@ -26,14 +26,14 @@ function App() {
   }, [obj]);
 
  
-  const updateFeedback = (feedbackType) => {
+  const handleUpdateFeedback = (feedbackType) => {
     setObj(prevObj => ({
       ...prevObj,
       [feedbackType]: prevObj[feedbackType] + 1 
     }));
   }
 
-  const resetFeedback = ()=>{
+  const handleResetFeedback = ()=>{
    setObj({
     good: 0,
     neutral: 0,
@@ -47,7 +47,7 @@ function App() {
   return (
     <>
      <Description />
-     <Options updateFeedback = {updateFeedback} totalFeedback = {totalFeedback} resetFeedback = {resetFeedback}/>
+     <Options handleUpdateFeedback = {handleUpdateFeedback} totalFeedback = {totalFeedback} handleResetFeedback = {handleResetFeedback}/>
     {totalFeedback === 0 ? <Notification/> :  <Feedback obj = {obj} totalFeedback = {totalFeedback} positiveFeedback = {positiveFeedback}/>}
     
 
